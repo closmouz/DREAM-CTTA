@@ -11,13 +11,20 @@ conda create -n CTTA python==3.9.7
 conda activate CTTA
 pip install torch==2.1.1 torchvision==0.16.1 torchaudio==2.1.1 --index-url https://download.pytorch.org/whl/cu121
 pip install -r requirements.txt
-```
 
 ### Data
 
 + ImageNet-C [Download](https://zenodo.org/record/2235448#.Yj2RO_co_mF)
-+ Cifar10-to-Cifar10-C [Automatic Download]
-+ Cifar100-to-Cifar100-C [Automatic Download]
++ Cifar10-to-Cifar10-C Automatic Download
++ Cifar100-to-Cifar100-C Automatic Download
+
+###Source Domain Statistics
+
+You can set `--train_info` to use the provided statistics.
+
++ ImageNet-C [Download](https://drive.google.com/file/d/1p1NoCI6UA6KuGcq_YdARH3kS9SHPv16c/view?usp=drive_link)
++ Cifar10-to-Cifar10-C and Cifar100-to-Cifar100-C you should train it yourself by setting `--src_data_dir`, source data [Download](https://zenodo.org/records/10089977)
+
 
 ### Source Model
 
@@ -26,10 +33,12 @@ pip install -r requirements.txt
 + Cifar100-to-Cifar100-C: you can load the source model from [here](https://drive.google.com/file/d/1yRekkpkIdwX_LFsOh4Ba9ndaECnY-UC-/view?usp=sharing).
 
 
-### Training and Evaluation
+### Training
 ```bash
 bash bash/imagenet.sh
-
+bash bash/cifar10.sh
+bash bash/cifar100.sh
+```
 
 ## Acknowledgements
 Our code is based on the PyTorch implementation of the following projects:
